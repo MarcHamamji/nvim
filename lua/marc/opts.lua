@@ -1,0 +1,23 @@
+vim.opt.background = 'dark'
+vim.cmd [[ colorscheme github_dark_default ]]
+
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.signcolumn = 'yes'
+
+vim.opt.hlsearch = false
+vim.opt.gdefault = true
+
+vim.opt.nu = true
+vim.opt.rnu = true
+vim.opt.cursorline = true
+vim.opt.scrolloff = 8
+
+vim.opt.clipboard = 'unnamedplus'
+
+vim.opt.foldcolumn = 'auto'
+
+vim.opt.spell = true
+vim.opt.spelllang = { 'en_us' }
+
