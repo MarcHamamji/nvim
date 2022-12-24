@@ -28,6 +28,7 @@ vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, opts)
 vim.keymap.set('n', '<leader>d', function() vim.diagnostic.open_float({ border = 'rounded' }) end, opts)
 vim.keymap.set('n', '<leader>D', builtins.diagnostics, opts)
 vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({ border = 'rounded' }) end, opts)
+vim.keymap.set('n', '<leader>f',vim.lsp.buf.format , opts)
 
 vim.keymap.set('n', '<leader><', function()
 	vim.cmd [[ :so $MYVIMRC ]]
@@ -45,4 +46,4 @@ vim.keymap.set('n', 'N', 'Nzzzv', opts)
 vim.keymap.set('n', '<leader>n', ':tabnew<CR>', opts)
 
 vim.keymap.set('n', '<leader>m', ':Mason<CR>', opts)
-
+vim.keymap.set('n', '<leader>e', ':EslintFixAll<CR>', opts)

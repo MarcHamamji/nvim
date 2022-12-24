@@ -17,6 +17,7 @@ require('packer').startup(function(use)
       'nvim-lua/plenary.nvim'
     }
   }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 	use { 'nvim-telescope/telescope-symbols.nvim' }
 	use { 'kyazdani42/nvim-web-devicons' }
 	use {'nvim-telescope/telescope-ui-select.nvim' }
@@ -49,7 +50,7 @@ require('packer').startup(function(use)
 
   -- Git
 	use { 'tpope/vim-fugitive' }
-	use { 'airblade/vim-gitgutter' }
+  use { 'lewis6991/gitsigns.nvim' }
 
   -- Commenting
   use { 'numToStr/Comment.nvim' }

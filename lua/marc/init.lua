@@ -44,3 +44,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 
 require('Comment').setup {}
+require('gitsigns').setup {
+  signcolumn = true,
+  current_line_blame = true,
+}

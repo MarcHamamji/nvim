@@ -13,6 +13,7 @@ vim.opt.nu = true
 vim.opt.rnu = true
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
+vim.opt.wrap = false
 
 vim.opt.clipboard = 'unnamedplus'
 
