@@ -15,24 +15,24 @@ cmp.setup({
 	window = {
 		documentation = cmp.config.window.bordered(),
 	},
-	mapping = cmp.mapping.preset.insert({
-		['<C-Space>'] = cmp.mapping.complete(),
-		['<CR>'] = cmp.mapping.confirm({ select = false }),
-		['<C-j>'] = cmp.mapping(function(fallback)
-			if luasnip.jumpable() then
-				luasnip.jump(1)
-			else
-				fallback()
-			end
-		end),
-		['<C-k>'] = cmp.mapping(function(fallback)
-			if luasnip.jumpable(-1) then
-				luasnip.jump(-1)
-			else
-				fallback()
-			end
-		end)
-	}),
+  mapping = cmp.mapping.preset.insert({
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm({ select = false }),
+    ['<C-j>'] = cmp.mapping(function(fallback)
+      if luasnip.jumpable() then
+        luasnip.jump(1)
+      else
+        fallback()
+      end
+    end),
+    ['<C-k>'] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end)
+  }),
 	sources = cmp.config.sources({
 		{
 			name = 'luasnip',
