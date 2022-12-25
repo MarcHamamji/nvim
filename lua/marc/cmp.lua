@@ -2,9 +2,6 @@ local cmp = require('cmp')
 local lspkind = require('lspkind')
 local luasnip = require('luasnip')
 
-local fdsafd = 4
-print(fdsafd)
-
 cmp.setup({
 	preselect = cmp.PreselectMode.None,
 	snippet = {
@@ -65,6 +62,9 @@ cmp.setup({
         spell = '[spl]'
       },
     })
+  },
+  experimental = {
+    ghost_text = true,
   },
 })
 

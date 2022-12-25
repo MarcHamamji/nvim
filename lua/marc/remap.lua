@@ -1,14 +1,14 @@
 local builtins = require('telescope.builtin')
 
 local opts = {
-	noremap = true,
-	silent = true
+  noremap = true,
+  silent = true
 }
 
 vim.keymap.set('n', '<leader>p', function()
-	if not pcall(builtins.git_files) then
-		builtins.find_files()
-	end
+  if not pcall(builtins.git_files) then
+    builtins.find_files()
+  end
 end, opts)
 vim.keymap.set('n', '<leader>,', function() builtins.find_files({ cwd = '$HOME/.config/nvim' }) end, opts)
 vim.keymap.set('n', '<leader>g', builtins.live_grep, opts)
@@ -28,11 +28,14 @@ vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, opts)
 vim.keymap.set('n', '<leader>d', function() vim.diagnostic.open_float({ border = 'rounded' }) end, opts)
 vim.keymap.set('n', '<leader>D', builtins.diagnostics, opts)
 vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({ border = 'rounded' }) end, opts)
-vim.keymap.set('n', '<leader>f',vim.lsp.buf.format , opts)
+vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
+
+vim.keymap.set('n', '<leader>dn', function() vim.diagnostic.goto_next({ float = { border = 'rounded' } }) end, opts)
+vim.keymap.set('n', '<leader>dp', function() vim.diagnostic.goto_prev({ float = { border = 'rounded' } }) end, opts)
 
 vim.keymap.set('n', '<leader><', function()
-	vim.cmd [[ :so $MYVIMRC ]]
-	print('Successfully reloaded config.')
+  vim.cmd [[ :so $MYVIMRC ]]
+  print('Successfully reloaded config.')
 end)
 
 vim.keymap.set('v', 'J', ':m \'>+1<CR>gv=gv', opts)
