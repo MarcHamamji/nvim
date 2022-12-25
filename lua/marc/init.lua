@@ -13,5 +13,5 @@ require('marc.treesitter')
 require('marc.tweaks')
 
 function P(...)
-	print(vim.inspect(...))
+  print(vim.inspect(...))
 end
