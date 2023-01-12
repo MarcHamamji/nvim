@@ -1,7 +1,7 @@
 vim.g.mapleader = ' '
 
-require('marc.colors')
 require('marc.packer')
+require('marc.colors')
 require('marc.opts')
 require('marc.remap')
 require('marc.luasnip')
