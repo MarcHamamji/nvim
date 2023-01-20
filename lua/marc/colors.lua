@@ -1,5 +1,8 @@
 vim.opt.background = 'dark'
-vim.cmd [[ colorscheme github_dark_default ]]
+require('onedark').setup({
+  style = 'deep'
+})
+require('onedark').load()
 
 vim.api.nvim_create_autocmd('BufEnter', {
   pattern = { '*.vue' },

@@ -1,5 +1,9 @@
 vim.g.mapleader = ' '
 
+function P(...)
+  print(vim.inspect(...))
+end
+
 require('marc.packer')
 require('marc.colors')
 require('marc.opts')
@@ -12,6 +16,9 @@ require('marc.telescope')
 require('marc.treesitter')
 require('marc.tweaks')
 
-function P(...)
-  print(vim.inspect(...))
-end
+local handlers = require('marc.code_runner.handlers')
+
+require('marc.code_runner').setup({
+  rust = handlers.shell_handler('cargo run examples/hello.marc'),
+  lua = handlers.shell_handler('ls --color=always')
+})

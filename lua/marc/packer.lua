@@ -5,7 +5,8 @@ require('packer').startup(function(use)
 
 
   -- Theme
-  use { 'projekt0n/github-nvim-theme' }
+  -- use { 'projekt0n/github-nvim-theme' }
+  use { 'navarasu/onedark.nvim' }
   use {
     'nvim-lualine/lualine.nvim',
     requires = {
@@ -107,6 +108,17 @@ require('packer').startup(function(use)
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
+    end
+  }
+
+  -- Miscellaneous
+  use { 'm00qek/baleia.nvim' }
+  use {
+    'MarcHamamji/ascii-text.nvim',
+    config = function ()
+      require('ascii-text').setup {
+        spacing = 'kerning'
+      }
     end
   }
 
