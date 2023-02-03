@@ -1,3 +1,4 @@
+---@diagnostic disable: different-requires
 vim.g.mapleader = ' '
 
 function P(...)
@@ -15,10 +16,3 @@ require('marc.lsp')
 require('marc.telescope')
 require('marc.treesitter')
 require('marc.tweaks')
-
-local handlers = require('marc.code_runner.handlers')
-
-require('marc.code_runner').setup({
-  rust = handlers.shell_handler('cargo run examples/hello.marc'),
-  lua = handlers.shell_handler('ls --color=always')
-})

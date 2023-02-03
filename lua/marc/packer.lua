@@ -112,14 +112,20 @@ require('packer').startup(function(use)
   }
 
   -- Miscellaneous
-  use { 'm00qek/baleia.nvim' }
   use {
     'MarcHamamji/ascii-text.nvim',
-    config = function ()
+    config = function()
       require('ascii-text').setup {
         spacing = 'kerning'
       }
     end
+  }
+
+  use {
+    'MarcHamamji/runner.nvim',
+    requires = {
+      'm00qek/baleia.nvim'
+    }
   }
 
 end)

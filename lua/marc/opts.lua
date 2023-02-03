@@ -3,11 +3,13 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.signcolumn = 'yes'
 vim.opt.foldcolumn = 'auto'
+vim.opt.inccommand = 'split'
 
 vim.opt.splitright = true
 
 vim.opt.hlsearch = false
 vim.opt.gdefault = true
+vim.opt.showmode = false
 
 vim.opt.nu = true
 vim.opt.rnu = true

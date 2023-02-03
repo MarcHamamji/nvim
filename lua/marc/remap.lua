@@ -34,7 +34,8 @@ vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
 -- vim.keymap.set('n', '<leader>dk', function() vim.diagnostic.goto_prev({ float = { border = 'rounded' } }) end, opts)
 
 vim.keymap.set('n', '<leader><', function()
-  vim.cmd [[ :luafile $MYVIMRC ]]
+  package.loaded = {}
+  vim.cmd [[ source $MYVIMRC ]]
   print('Successfully reloaded config.')
 end)
 
@@ -51,5 +52,5 @@ vim.keymap.set('n', '<leader>n', ':tabnew<CR>', opts)
 vim.keymap.set('n', '<leader>m', ':Mason<CR>', opts)
 vim.keymap.set('n', '<leader>e', ':EslintFixAll<CR>', opts)
 
-vim.keymap.set('n', '<leader><space>', require('marc.code_runner').run, opts)
+vim.keymap.set('n', '<leader><space>', require('runner').run, opts)
 vim.keymap.set('n', '<leader><S-a>', require('ascii-text').open, opts)

@@ -1,29 +1,37 @@
+local utils = require('marc.code_runner.utils')
+
 local M = {}
 
+M._job_id = nil
+
 M.shell_handler = function(command)
-  return function()
-    local bufnr = vim.api.nvim_create_buf(true, true)
-    vim.api.nvim_buf_set_option(bufnr, 'modifiable', false)
+  return function(current_buffer)
+    local current_buffer_name = vim.api.nvim_buf_get_name(current_buffer)
 
-    vim.cmd [[ vsplit ]]
-    local winnr = vim.api.nvim_get_current_win()
-    -- TODO: Set windows options
+    local buffer = utils.create_buffer('OUTPUT - ' .. current_buffer_name)
+    local window = utils.create_window()
 
-    vim.api.nvim_win_set_buf(winnr, bufnr)
+    vim.api.nvim_win_set_buf(window, buffer)
 
-    local add_line = function(_, data)
-      vim.api.nvim_buf_set_option(bufnr, 'modifiable', true)
-      local row = vim.api.nvim_buf_line_count(bufnr) - 1
-      local col = vim.fn.len(vim.api.nvim_buf_get_lines(bufnr, -2, -1, false)[1])
-      vim.api.nvim_buf_set_text(bufnr, row, col, row, col, data)
-      vim.api.nvim_buf_set_option(bufnr, 'modifiable', false)
+    local add_line = utils.create_add_line(buffer)
+
+    if M._job_id then
+      vim.fn.jobstop(M._job_id)
+      M._job_id = nil
     end
 
-    vim.fn.jobstart(command, {
+    M._job_id = vim.fn.jobstart(command, {
+      pty = true,
       cwd = vim.fn.getcwd(),
       on_stdout = add_line,
       on_stderr = add_line
     })
+  end
+end
+
+M.command_handler = function (command)
+  return function ()
+    vim.cmd(command)
   end
 end
 
