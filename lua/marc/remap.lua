@@ -47,10 +47,21 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', opts)
 vim.keymap.set('n', 'n', 'nzzzv', opts)
 vim.keymap.set('n', 'N', 'Nzzzv', opts)
 
-vim.keymap.set('n', '<leader>n', ':tabnew<CR>', opts)
+vim.keymap.set('n', '<leader>n', function()
+  if vim.o.winbar == '' then
+    vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+  else
+    vim.o.winbar = ''
+  end
+end, opts)
 
 vim.keymap.set('n', '<leader>m', ':Mason<CR>', opts)
+vim.keymap.set('n', '<leader>l', ':Lazy<CR>', opts)
 vim.keymap.set('n', '<leader>e', ':EslintFixAll<CR>', opts)
 
 vim.keymap.set('n', '<leader><space>', require('runner').run, opts)
 vim.keymap.set('n', '<leader><S-a>', require('ascii-text').open, opts)
+
+for i = 1, 9 do
+  vim.keymap.set('n', '<leader>' .. i, i .. 'gt', opts)
+end

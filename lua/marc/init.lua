@@ -5,7 +5,7 @@ function P(...)
   print(vim.inspect(...))
 end
 
-require('marc.packer')
+require('marc.lazy')
 require('marc.colors')
 require('marc.opts')
 require('marc.remap')
