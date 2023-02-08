@@ -1,8 +1,7 @@
-vim.opt.background = 'dark'
-require('onedark').setup({
-  style = 'deep'
-})
-require('onedark').load()
+vim.g.tokyonight_style = 'night'
+vim.g.tokyonight_enable_italic = 1
+
+vim.cmd [[ colorscheme tokyonight ]]
 
 vim.api.nvim_create_autocmd('BufEnter', {
   pattern = { '*.vue' },

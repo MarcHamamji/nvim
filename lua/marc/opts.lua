@@ -5,6 +5,7 @@ vim.opt.expandtab = true
 vim.opt.signcolumn = 'yes'
 vim.opt.foldcolumn = 'auto'
 vim.opt.inccommand = 'split'
+vim.opt.termguicolors = true
 
 vim.opt.splitright = true
 
@@ -19,7 +20,6 @@ vim.opt.scrolloff = 8
 vim.opt.wrap = false
 
 vim.opt.clipboard = 'unnamedplus'
-
 
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us' }

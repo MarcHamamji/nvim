@@ -14,13 +14,17 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
   -- Theme
-  'navarasu/onedark.nvim',
+  'ghifarit53/tokyonight-vim',
   {
     'nvim-lualine/lualine.nvim',
     dependencies = {
       'kyazdani42/nvim-web-devicons',
       opt = true
     }
+  },
+  {
+    'kdheepak/tabline.nvim',
+    dependencies = { 'kyazdani42/nvim-web-devicons' }
   },
 
 

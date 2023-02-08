@@ -6,11 +6,11 @@ function P(...)
 end
 
 require('marc.lazy')
-require('marc.colors')
 require('marc.opts')
+require('marc.colors')
 require('marc.remap')
 require('marc.luasnip')
-require('marc.lualine')
+require('marc.lines')
 require('marc.cmp')
 require('marc.lsp')
 require('marc.telescope')
