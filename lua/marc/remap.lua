@@ -30,6 +30,7 @@ vim.keymap.set('n', '<leader>D', builtins.diagnostics, opts)
 vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({ border = 'rounded' }) end, opts)
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
 
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 -- vim.keymap.set('n', '<leader>dj', function() vim.diagnostic.goto_next({ float = { border = 'rounded' } }) end, opts)
 -- vim.keymap.set('n', '<leader>dk', function() vim.diagnostic.goto_prev({ float = { border = 'rounded' } }) end, opts)
 
