@@ -131,10 +131,5 @@ require("lazy").setup({
     }
   },
 
-  {
-    'MarcHamamji/runner.nvim',
-    dependencies = {
-      'm00qek/baleia.nvim'
-    }
-  }
+  { 'MarcHamamji/runner.nvim' }
 })
