@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
   -- Theme
-  'ghifarit53/tokyonight-vim',
+  { 'ghifarit53/tokyonight-vim' },
   {
     'nvim-lualine/lualine.nvim',
     dependencies = {
