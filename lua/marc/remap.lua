@@ -16,7 +16,7 @@ vim.keymap.set('n', '<leader>g', builtins.live_grep, opts)
 vim.keymap.set('n', '<leader>h', builtins.help_tags, opts)
 vim.keymap.set('n', '<leader>t', builtins.builtin, opts)
 vim.keymap.set('n', '<leader>o', builtins.oldfiles, opts)
-vim.keymap.set('n', '<leader>s', builtins.spell_suggest, opts)
+vim.keymap.set('n', '<leader>s', builtins.lsp_document_symbols, opts)
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = 'rounded',
@@ -31,6 +31,7 @@ vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({ border = 'rounded' }) en
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
 
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+vim.keymap.set('n', 'gr', builtins.lsp_references, opts)
 -- vim.keymap.set('n', '<leader>dj', function() vim.diagnostic.goto_next({ float = { border = 'rounded' } }) end, opts)
 -- vim.keymap.set('n', '<leader>dk', function() vim.diagnostic.goto_prev({ float = { border = 'rounded' } }) end, opts)
 
@@ -39,6 +40,9 @@ vim.keymap.set('n', '<leader><', function()
   vim.cmd [[ source $MYVIMRC ]]
   print('Successfully reloaded config.')
 end)
+
+vim.keymap.set('n', '<C-j>', ':cnext<CR>', opts)
+vim.keymap.set('n', '<C-k>', ':cprevious<CR>', opts)
 
 vim.keymap.set('v', 'J', ':m \'>+1<CR>gv=gv', opts)
 vim.keymap.set('v', 'K', ':m \'<-2<CR>gv=gv', opts)
