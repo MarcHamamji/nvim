@@ -13,7 +13,7 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-Space>'] = cmp.mapping.complete({}),
     ['<CR>'] = cmp.mapping.confirm({ select = false }),
     ['<C-j>'] = cmp.mapping(function(fallback)
       if luasnip.jumpable() then
