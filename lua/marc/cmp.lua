@@ -35,7 +35,6 @@ cmp.setup({
       name = 'luasnip',
       max_item_count = 3
     },
-    { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
     {
       name = 'path',
@@ -56,7 +55,6 @@ cmp.setup({
       menu = {
         luasnip = '[snip]',
         nvim_lsp = '[lsp]',
-        nvim_lua = '[vim]',
         path = '[path]',
         buffer = '[buf]',
         spell = '[spl]'
