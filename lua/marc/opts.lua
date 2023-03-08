@@ -18,6 +18,7 @@ vim.opt.rnu = true
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.wrap = false
+vim.opt.updatetime = 50
 
 vim.opt.clipboard = 'unnamedplus'
 
