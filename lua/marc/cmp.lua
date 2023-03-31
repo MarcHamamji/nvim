@@ -41,12 +41,12 @@ cmp.setup({
       max_item_count = 3,
       keyword_length = 3
     },
+    { name = 'buffer' },
     {
       name = 'spell',
-      max_item_count = 3,
+      max_item_count = 1,
       keyword_length = 3
     },
-    { name = 'buffer' },
   }),
   formatting = {
     format = lspkind.cmp_format({
