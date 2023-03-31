@@ -23,8 +23,10 @@ require("lazy").setup({
     }
   },
   {
-    'kdheepak/tabline.nvim',
-    dependencies = { 'kyazdani42/nvim-web-devicons' }
+    'lewis6991/impatient.nvim',
+    config = function()
+      require('impatient')
+    end
   },
 
 
@@ -38,7 +40,8 @@ require("lazy").setup({
   },
   {
     'nvim-telescope/telescope-fzf-native.nvim',
-    build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+    build =
+    'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
   },
 
   { 'nvim-telescope/telescope-symbols.nvim' },
@@ -72,13 +75,6 @@ require("lazy").setup({
     'ray-x/lsp_signature.nvim',
     config = {
       hint_enable = false,
-    }
-  },
-
-  {
-    'SmiteshP/nvim-navic',
-    config = {
-      highlight = true,
     }
   },
 
