@@ -51,7 +51,7 @@ require('lualine').setup {
   tabline = {
     lualine_a = { {
       'tabs',
-      mode = 2,
+      mode = 1,
       max_length = vim.o.columns,
       use_mode_colors = true,
       tabs_color = {
