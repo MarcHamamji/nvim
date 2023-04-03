@@ -1,4 +1,7 @@
 local builtins = require('telescope.builtin')
+local telescope = require('telescope')
+local ui = require('harpoon.ui')
+local mark = require('harpoon.mark')
 
 local opts = {
   noremap = true,
@@ -13,10 +16,16 @@ end, opts)
 vim.keymap.set('n', '<leader>,', function() builtins.find_files({ cwd = '$HOME/.config/nvim' }) end, opts)
 vim.keymap.set('n', '<leader>g', builtins.live_grep, opts)
 
-vim.keymap.set('n', '<leader>h', builtins.help_tags, opts)
+vim.keymap.set('n', '<leader>H', builtins.help_tags, opts)
 vim.keymap.set('n', '<leader>t', builtins.builtin, opts)
 vim.keymap.set('n', '<leader>o', builtins.oldfiles, opts)
 vim.keymap.set('n', '<leader>s', builtins.lsp_document_symbols, opts)
+
+vim.keymap.set('n', '<leader>h', ui.toggle_quick_menu, opts)
+vim.keymap.set('n', '<C-l>', mark.add_file, opts)
+vim.keymap.set('n', '<leader>j', function() ui.nav_file(1) end, opts)
+vim.keymap.set('n', '<leader>k', function() ui.nav_file(2) end, opts)
+vim.keymap.set('n', '<leader>l', function() ui.nav_file(3) end, opts)
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = 'rounded',
@@ -25,6 +34,7 @@ vim.keymap.set('n', '<S-k>', vim.lsp.buf.hover, opts)
 
 vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
 vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, opts)
+vim.keymap.set('n', '<leader>R', telescope.extensions.refactoring.refactors, opts)
 vim.keymap.set('n', '<leader>d', function() vim.diagnostic.open_float({ border = 'rounded' }) end, opts)
 vim.keymap.set('n', '<leader>D', builtins.diagnostics, opts)
 vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({ border = 'rounded' }) end, opts)
@@ -52,16 +62,7 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', opts)
 vim.keymap.set('n', 'n', 'nzzzv', opts)
 vim.keymap.set('n', 'N', 'Nzzzv', opts)
 
-vim.keymap.set('n', '<leader>n', function()
-  if vim.o.winbar == '' then
-    vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-  else
-    vim.o.winbar = ''
-  end
-end, opts)
-
 vim.keymap.set('n', '<leader>m', ':Mason<CR>', opts)
-vim.keymap.set('n', '<leader>l', ':Lazy<CR>', opts)
 vim.keymap.set('n', '<leader>e', ':EslintFixAll<CR>', opts)
 
 vim.keymap.set('n', '<leader><space>', require('runner').run, opts)

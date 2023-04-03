@@ -30,6 +30,11 @@ mason_lsp.setup_handlers {
       capabilities = capabilities
     }
   end,
+  volar = function()
+    lspconfig.volar.setup {
+      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }
+    }
+  end,
   cssls = function()
     lspconfig.cssls.setup {
       capabilities = capabilities

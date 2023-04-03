@@ -77,6 +77,10 @@ require("lazy").setup({
       hint_enable = false,
     }
   },
+  {
+    'ThePrimeagen/refactoring.nvim',
+    config = true,
+  },
 
   {
     'folke/neodev.nvim',
@@ -89,7 +93,6 @@ require("lazy").setup({
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/cmp-buffer' },
   { 'hrsh7th/cmp-path' },
-  -- { 'hrsh7th/cmp-nvim-lua' },
   { 'f3fora/cmp-spell' },
   { 'saadparwaiz1/cmp_luasnip' },
   { 'onsails/lspkind.nvim' },
@@ -113,6 +116,14 @@ require("lazy").setup({
     }
   },
 
+  -- Harpoon
+  {
+    'ThePrimeagen/harpoon',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+  },
+
 
   -- Commenting
   {
@@ -132,5 +143,14 @@ require("lazy").setup({
     }
   },
 
-  { 'MarcHamamji/runner.nvim' }
+  {
+    'MarcHamamji/runner.nvim',
+    config = function()
+      require('runner').setup {
+        position = 'top', -- options: top, left, right, bottom
+        width = 40,       -- width of window when position is left or right
+        height = 10,      -- height of window when position is top or bottom
+      }
+    end,
+  }
 })
