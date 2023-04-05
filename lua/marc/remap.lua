@@ -5,7 +5,7 @@ local mark = require('harpoon.mark')
 
 local opts = {
   noremap = true,
-  silent = true
+  silent = true,
 }
 
 vim.keymap.set('n', '<leader>p', function()
@@ -13,7 +13,9 @@ vim.keymap.set('n', '<leader>p', function()
     builtins.find_files()
   end
 end, opts)
-vim.keymap.set('n', '<leader>,', function() builtins.find_files({ cwd = '$HOME/.config/nvim' }) end, opts)
+vim.keymap.set('n', '<leader>,', function()
+  builtins.find_files { cwd = '$HOME/.config/nvim' }
+end, opts)
 vim.keymap.set('n', '<leader>g', builtins.live_grep, opts)
 
 vim.keymap.set('n', '<leader>H', builtins.help_tags, opts)
@@ -22,10 +24,16 @@ vim.keymap.set('n', '<leader>o', builtins.oldfiles, opts)
 vim.keymap.set('n', '<leader>s', builtins.lsp_document_symbols, opts)
 
 vim.keymap.set('n', '<leader>h', ui.toggle_quick_menu, opts)
-vim.keymap.set('n', '<C-l>', mark.add_file, opts)
-vim.keymap.set('n', '<leader>j', function() ui.nav_file(1) end, opts)
-vim.keymap.set('n', '<leader>k', function() ui.nav_file(2) end, opts)
-vim.keymap.set('n', '<leader>l', function() ui.nav_file(3) end, opts)
+vim.keymap.set('n', '<leader>j', function()
+  ui.nav_file(1)
+end, opts)
+vim.keymap.set('n', '<leader>k', function()
+  ui.nav_file(2)
+end, opts)
+vim.keymap.set('n', '<leader>l', function()
+  ui.nav_file(3)
+end, opts)
+vim.keymap.set('n', '<leader>;', mark.add_file, opts)
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = 'rounded',
@@ -35,10 +43,17 @@ vim.keymap.set('n', '<S-k>', vim.lsp.buf.hover, opts)
 vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
 vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, opts)
 vim.keymap.set('n', '<leader>R', telescope.extensions.refactoring.refactors, opts)
-vim.keymap.set('n', '<leader>d', function() vim.diagnostic.open_float({ border = 'rounded' }) end, opts)
+vim.keymap.set('n', '<leader>d', function()
+  vim.diagnostic.open_float { border = 'rounded' }
+end, opts)
 vim.keymap.set('n', '<leader>D', builtins.diagnostics, opts)
-vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({ border = 'rounded' }) end, opts)
+vim.keymap.set('n', 'K', function()
+  vim.lsp.buf.hover { border = 'rounded' }
+end, opts)
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
+vim.keymap.set('n', '<leader>n', function()
+  vim.lsp.buf.format { name = 'null-ls' }
+end, opts)
 
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 vim.keymap.set('n', 'gr', builtins.lsp_references, opts)
@@ -47,15 +62,15 @@ vim.keymap.set('n', 'gr', builtins.lsp_references, opts)
 
 vim.keymap.set('n', '<leader><', function()
   package.loaded = {}
-  vim.cmd [[ source $MYVIMRC ]]
+  vim.cmd([[ source $MYVIMRC ]])
   print('Successfully reloaded config.')
 end)
 
 vim.keymap.set('n', '<C-j>', ':cnext<CR>', opts)
 vim.keymap.set('n', '<C-k>', ':cprevious<CR>', opts)
 
-vim.keymap.set('v', 'J', ':m \'>+1<CR>gv=gv', opts)
-vim.keymap.set('v', 'K', ':m \'<-2<CR>gv=gv', opts)
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", opts)
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", opts)
 
 vim.keymap.set('n', '<C-u>', '<C-u>zz', opts)
 vim.keymap.set('n', '<C-d>', '<C-d>zz', opts)

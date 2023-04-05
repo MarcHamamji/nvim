@@ -9,7 +9,7 @@ mason_lsp.setup()
 mason_lsp.setup_handlers {
   function(server_name)
     lspconfig[server_name].setup {
-      on_attach = on_attach
+      on_attach = on_attach,
     }
   end,
   lua_ls = function()
@@ -17,27 +17,27 @@ mason_lsp.setup_handlers {
       settings = {
         Lua = {
           runtime = {
-            version = 'LuaJIT'
+            version = 'LuaJIT',
           },
           diagnostics = {
-            globals = { 'vim' }
-          }
-        }
+            globals = { 'vim' },
+          },
+        },
       },
       workspace = {
         library = vim.api.nvim_get_runtime_file('', true),
       },
-      capabilities = capabilities
+      capabilities = capabilities,
     }
   end,
   volar = function()
     lspconfig.volar.setup {
-      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }
+      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
     }
   end,
   cssls = function()
     lspconfig.cssls.setup {
-      capabilities = capabilities
+      capabilities = capabilities,
     }
-  end
+  end,
 }
