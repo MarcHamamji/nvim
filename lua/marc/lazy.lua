@@ -74,10 +74,6 @@ require('lazy').setup {
     },
   },
   {
-    'ThePrimeagen/refactoring.nvim',
-    config = true,
-  },
-  {
     'folke/neodev.nvim',
     config = true,
   },

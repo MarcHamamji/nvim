@@ -42,7 +42,6 @@ vim.keymap.set('n', '<S-k>', vim.lsp.buf.hover, opts)
 
 vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
 vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, opts)
-vim.keymap.set('n', '<leader>R', telescope.extensions.refactoring.refactors, opts)
 vim.keymap.set('n', '<leader>d', function()
   vim.diagnostic.open_float { border = 'rounded' }
 end, opts)

@@ -1,4 +1,8 @@
 local separators = {
+  -- section = {
+  --   left = '',
+  --   right = '',
+  -- },
   section = {
     left = '🭀',
     right = '🭋',
