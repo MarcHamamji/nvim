@@ -31,6 +31,7 @@ cmp.setup {
     end),
   },
   sources = cmp.config.sources {
+    { name = 'git' },
     { name = 'nvim_lsp' },
     {
       name = 'luasnip',
@@ -65,3 +66,5 @@ cmp.setup {
     ghost_text = true,
   },
 }
+
+require('cmp_git').setup()

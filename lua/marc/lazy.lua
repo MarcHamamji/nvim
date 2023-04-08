@@ -97,6 +97,12 @@ require('lazy').setup {
   { 'hrsh7th/cmp-path' },
   { 'f3fora/cmp-spell' },
   { 'saadparwaiz1/cmp_luasnip' },
+  {
+    'petertriho/cmp-git',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+  },
   { 'onsails/lspkind.nvim' },
 
   -- Treesitter
@@ -144,11 +150,21 @@ require('lazy').setup {
   {
     'MarcHamamji/runner.nvim',
     config = function()
-      require('runner').setup {
+      local runner = require('runner')
+      local helpers = require('runner.handlers.helpers')
+
+      runner.setup {
         position = 'right', -- options: top, left, right, bottom
         width = 60, -- width of window when position is left or right
         height = 10, -- height of window when position is top or bottom
       }
+
+      runner.set_handler('markdown', helpers.command_handler('MarkdownPreviewToggle'))
     end,
+  },
+
+  {
+    'iamcco/markdown-preview.nvim',
+    build = 'cd app && npm install',
   },
 }
