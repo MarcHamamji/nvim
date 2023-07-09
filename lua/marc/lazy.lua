@@ -22,12 +22,6 @@ require('lazy').setup {
       opt = true,
     },
   },
-  {
-    'lewis6991/impatient.nvim',
-    config = function()
-      require('impatient')
-    end,
-  },
 
   -- Telescope
   {
@@ -39,7 +33,8 @@ require('lazy').setup {
   },
   {
     'nvim-telescope/telescope-fzf-native.nvim',
-    build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
+    build =
+    'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
   },
 
   { 'nvim-telescope/telescope-symbols.nvim' },
@@ -69,13 +64,15 @@ require('lazy').setup {
 
   {
     'ray-x/lsp_signature.nvim',
-    config = {
+    opts = {
       hint_enable = false,
     },
   },
   {
     'folke/neodev.nvim',
     config = true,
+    -- lazy = true,
+    -- event = 'BufEnter *.lua',
   },
   {
     'jose-elias-alvarez/null-ls.nvim',
@@ -84,7 +81,7 @@ require('lazy').setup {
       null_ls.setup {
         sources = {
           null_ls.builtins.formatting.stylua,
-          -- null_ls.builtins.diagnostics.eslint,
+          -- null_ls.builtins.formatting.eslint,
         },
       }
     end,
@@ -110,13 +107,17 @@ require('lazy').setup {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
   },
-  { 'nvim-treesitter/playground' },
+  {
+    'nvim-treesitter/playground',
+    lazy = true,
+    cmd = 'TSPlaygroundToggle',
+  },
 
   -- Git
   { 'tpope/vim-fugitive' },
   {
     'lewis6991/gitsigns.nvim',
-    config = {
+    opts = {
       signcolumn = true,
       current_line_blame = true,
     },
@@ -139,12 +140,13 @@ require('lazy').setup {
   -- Miscellaneous
   {
     'MarcHamamji/ascii-text.nvim',
-    config = {
+    opts = {
       spacing = 'kerning',
     },
     dependencies = {
       'nvim-telescope/telescope.nvim',
     },
+    -- lazy = true,
   },
 
   {
@@ -155,8 +157,8 @@ require('lazy').setup {
 
       runner.setup {
         position = 'right', -- options: top, left, right, bottom
-        width = 60, -- width of window when position is left or right
-        height = 10, -- height of window when position is top or bottom
+        width = 60,         -- width of window when position is left or right
+        height = 10,        -- height of window when position is top or bottom
       }
 
       runner.set_handler('markdown', helpers.command_handler('MarkdownPreviewToggle'))

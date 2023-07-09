@@ -14,3 +14,4 @@ vim.api.nvim_set_hl(0, 'SpellBad', {})
 vim.api.nvim_set_hl(0, 'SpellCap', {})
 vim.api.nvim_set_hl(0, 'SpellRare', {})
 vim.api.nvim_set_hl(0, 'SpellLocal', {})
+

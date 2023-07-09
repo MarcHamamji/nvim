@@ -59,10 +59,8 @@ vim.keymap.set('n', 'gr', builtins.lsp_references, opts)
 -- vim.keymap.set('n', '<leader>dj', function() vim.diagnostic.goto_next({ float = { border = 'rounded' } }) end, opts)
 -- vim.keymap.set('n', '<leader>dk', function() vim.diagnostic.goto_prev({ float = { border = 'rounded' } }) end, opts)
 
-vim.keymap.set('n', '<leader><', function()
-  package.loaded = {}
-  vim.cmd([[ source $MYVIMRC ]])
-  print('Successfully reloaded config.')
+vim.keymap.set('n', 'gh', function()
+  require('gitsigns').preview_hunk()
 end)
 
 vim.keymap.set('n', '<C-j>', ':cnext<CR>', opts)
