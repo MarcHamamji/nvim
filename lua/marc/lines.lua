@@ -3,14 +3,14 @@ local separators = {
   --   left = '',
   --   right = '',
   -- },
-  section = {
-    left = '🭀',
-    right = '🭋',
-  },
   -- section = {
-  --   left = '🭬',
-  --   right = '🭮',
+  --   left = '🭀',
+  --   right = '🭋',
   -- },
+  section = {
+    left = '',
+    right = '',
+  },
   component = {
     left = '',
     right = '',
