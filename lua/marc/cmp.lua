@@ -31,11 +31,19 @@ cmp.setup {
     end),
   },
   sources = cmp.config.sources {
+    {
+      name = "copilot",
+      max_item_count = 2,
+    },
+    {
+      name = "codeium",
+      max_item_count = 2,
+    },
     { name = 'git' },
     { name = 'nvim_lsp' },
     {
       name = 'luasnip',
-      max_item_count = 3,
+      max_item_count = 1,
     },
     {
       name = 'path',
@@ -54,6 +62,8 @@ cmp.setup {
       mode = 'symbol_text',
       maxwidth = 50,
       menu = {
+        copilot = "[]",
+        codeium = "[]",
         luasnip = '[snip]',
         nvim_lsp = '[lsp]',
         path = '[path]',

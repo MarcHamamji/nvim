@@ -22,6 +22,7 @@ vim.keymap.set('n', '<leader>H', builtins.help_tags, opts)
 vim.keymap.set('n', '<leader>t', builtins.builtin, opts)
 vim.keymap.set('n', '<leader>o', builtins.oldfiles, opts)
 vim.keymap.set('n', '<leader>s', builtins.lsp_document_symbols, opts)
+vim.keymap.set('n', '<leader>S', builtins.lsp_workspace_symbols, opts)
 
 vim.keymap.set('n', '<leader>h', ui.toggle_quick_menu, opts)
 vim.keymap.set('n', '<leader>j', function()
@@ -42,6 +43,7 @@ vim.keymap.set('n', '<S-k>', vim.lsp.buf.hover, opts)
 
 vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
 vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, opts)
+vim.keymap.set('v', '<leader>a', vim.lsp.buf.code_action, opts)
 vim.keymap.set('n', '<leader>d', function()
   vim.diagnostic.open_float { border = 'rounded' }
 end, opts)
@@ -56,8 +58,8 @@ end, opts)
 
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 vim.keymap.set('n', 'gr', builtins.lsp_references, opts)
--- vim.keymap.set('n', '<leader>dj', function() vim.diagnostic.goto_next({ float = { border = 'rounded' } }) end, opts)
--- vim.keymap.set('n', '<leader>dk', function() vim.diagnostic.goto_prev({ float = { border = 'rounded' } }) end, opts)
+vim.keymap.set('n', '<leader>dj', function() vim.diagnostic.goto_next({ float = { border = 'rounded' } }) end, opts)
+vim.keymap.set('n', '<leader>dk', function() vim.diagnostic.goto_prev({ float = { border = 'rounded' } }) end, opts)
 
 vim.keymap.set('n', 'gh', function()
   require('gitsigns').preview_hunk()
