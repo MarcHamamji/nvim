@@ -9,20 +9,17 @@ cmp.setup {
       luasnip.lsp_expand(args.body)
     end,
   },
-  window = {
-    documentation = cmp.config.window.bordered(),
-  },
   mapping = cmp.mapping.preset.insert {
     ['<C-Space>'] = cmp.mapping.complete {},
     ['<CR>'] = cmp.mapping.confirm { select = false },
-    ['<C-j>'] = cmp.mapping(function(fallback)
+    ['<C-J>'] = cmp.mapping(function(fallback)
       if luasnip.jumpable() then
         luasnip.jump(1)
       else
         fallback()
       end
     end),
-    ['<C-k>'] = cmp.mapping(function(fallback)
+    ['<C-K>'] = cmp.mapping(function(fallback)
       if luasnip.jumpable(-1) then
         luasnip.jump(-1)
       else
@@ -33,11 +30,11 @@ cmp.setup {
   sources = cmp.config.sources {
     {
       name = "copilot",
-      max_item_count = 2,
+      max_item_count = 1,
     },
     {
       name = "codeium",
-      max_item_count = 2,
+      max_item_count = 1,
     },
     { name = 'git' },
     { name = 'nvim_lsp' },
@@ -58,17 +55,19 @@ cmp.setup {
     },
   },
   formatting = {
+    fields = { 'abbr', 'kind', 'menu' },
+    expandable_indicator = false,
     format = lspkind.cmp_format {
       mode = 'symbol_text',
       maxwidth = 50,
       menu = {
         copilot = "[]",
-        codeium = "[]",
-        luasnip = '[snip]',
-        nvim_lsp = '[lsp]',
-        path = '[path]',
-        buffer = '[buf]',
-        spell = '[spl]',
+        codeium = "[]",
+        luasnip = '[✂]',
+        nvim_lsp = '[]',
+        path = '[]',
+        buffer = '[]',
+        spell = '[]',
       },
     },
   },
