@@ -31,7 +31,11 @@ require('lazy').setup {
     build =
     'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
   },
-  { 'nvim-telescope/telescope-ui-select.nvim' },
+  -- { 'nvim-telescope/telescope-ui-select.nvim' },
+  {
+    'stevearc/dressing.nvim',
+    opts = {},
+  },
 
   { 'L3MON4D3/LuaSnip' },
   { 'rafamadriz/friendly-snippets' },
