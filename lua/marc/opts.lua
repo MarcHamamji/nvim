@@ -9,7 +9,6 @@ vim.opt.termguicolors = true
 
 vim.opt.splitright = true
 
-vim.opt.hlsearch = false
 vim.opt.gdefault = true
 vim.opt.showmode = false
 vim.opt.ignorecase = true
