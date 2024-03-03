@@ -27,7 +27,7 @@ map('n', '<leader>p', function()
 end, { desc = 'Find git files / files' })
 
 map('n', '<leader>,', function()
-  builtins.find_files { cwd = '$HOME/.config/nvim' }
+  builtins.find_files { cwd = vim.fn.stdpath('config')}
 end, { desc = 'Find nvim config files' })
 
 map('n', '<leader>b', function()
