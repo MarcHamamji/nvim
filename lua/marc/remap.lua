@@ -35,7 +35,7 @@ map('n', '<leader>b', function()
 end, { desc = 'Current buffer fuzzy find' })
 
 map('n', '<leader>sg', builtins.live_grep, { desc = '[S]earch [g]rep' })
-
+map('n', '<leader>sk', builtins.keymaps, { desc = '[S]earch [k]eymaps' })
 map('n', '<leader>sh', builtins.help_tags, { desc = '[S]earch [h]elp tags' })
 map('n', '<leader>st', builtins.builtin, { desc = '[S]earch [t]elescope builtins' })
 map('n', '<leader>so', builtins.oldfiles, { desc = '[S]earch [o]ld files' })
@@ -65,6 +65,7 @@ map('n', '<leader>D', builtins.diagnostics, { desc = 'Search [d]iagnostics' })
 map('n', '<leader>f', vim.lsp.buf.format, { desc = '[F]ormat' })
 
 map('n', 'gd', vim.lsp.buf.definition, { desc = '[G]o to [d]efinition' })
+map('n', 'gi', vim.lsp.buf.implementation, { desc = '[G]o to [i]mplementation' })
 map('n', 'gr', builtins.lsp_references, { desc = '[G]o to [r]eferences' })
 map('n', '<leader>dj', function() vim.diagnostic.goto_next({ float = { border = 'rounded' } }) end,
   { desc = 'Go to next diagnostic' })
