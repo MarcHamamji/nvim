@@ -1,7 +1,4 @@
-vim.g.tokyonight_style = 'night'
-vim.g.tokyonight_enable_italic = 1
-
-vim.cmd([[ colorscheme tokyonight ]])
+vim.cmd([[ colorscheme kanagawa ]])
 
 vim.api.nvim_create_autocmd('BufEnter', {
   pattern = { '*.vue' },
