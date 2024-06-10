@@ -5,9 +5,9 @@ function P(...)
 end
 
 require('custom.opts')
-require('custom.mappings')
-require('custom.ui')
 
 require('custom.lazy')
 
+require('custom.mappings')
+require('custom.ui')
 require('custom.languages')
