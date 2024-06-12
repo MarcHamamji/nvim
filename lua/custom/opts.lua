@@ -19,6 +19,7 @@ vim.opt.rnu = true
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.wrap = false
+vim.opt.breakindent = true
 
 vim.opt.clipboard = 'unnamedplus'
 
