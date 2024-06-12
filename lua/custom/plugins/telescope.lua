@@ -11,13 +11,13 @@ return {
         local themes = require('telescope.themes')
 
         utils.map('n', '<leader>p', function()
-            if not pcall(function() builtins.git_files { hidden = true } end) then
-                builtins.find_files { hidden = true }
+            if not pcall(function() builtins.git_files() end) then
+                builtins.find_files()
             end
         end, { desc = 'Find git files / files' })
 
         utils.map('n', '<leader>,', function()
-            builtins.find_files { cwd = vim.fn.stdpath('config'), hidden = true }
+            builtins.find_files { cwd = vim.fn.stdpath('config') }
         end, { desc = 'Find nvim config files' })
 
         utils.map('n', '<leader>b', function()
@@ -33,4 +33,3 @@ return {
         utils.map('n', '<leader>sw', builtins.lsp_workspace_symbols, { desc = '[S]earch [w]orkspace symbols' })
     end,
 }
-
