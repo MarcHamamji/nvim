@@ -25,7 +25,7 @@ vim.opt.clipboard = 'unnamedplus'
 
 vim.opt.undofile = true
 
-vim.opt.spell = true
+vim.opt.spell = false
 vim.opt.spelllang = { 'en_us' }
 
 vim.g.BASH_Ctrl_j = false
