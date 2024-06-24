@@ -26,7 +26,7 @@ return {
         utils.map('n', '<leader>r', vim.lsp.buf.rename, { desc = '[R]ename' })
         utils.map('n', '<leader>a', vim.lsp.buf.code_action, { desc = 'Code [a]ction' })
         utils.map('v', '<leader>a', vim.lsp.buf.code_action, { desc = 'Code [a]ction' })
-        utils.map('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating [d]iagnostics' })
+        utils.map('n', '<leader>dd', vim.diagnostic.open_float, { desc = 'Open floating [d]iagnostics' })
         utils.map('n', '<leader>D', builtins.diagnostics, { desc = 'Search [d]iagnostics' })
 
         utils.map('n', 'gd', vim.lsp.buf.definition, { desc = '[G]o to [d]efinition' })
