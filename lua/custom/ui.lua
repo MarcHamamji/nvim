@@ -29,7 +29,7 @@ vim.cmd([[
     anoremenu PopUp.-2-                         <Nop>
     anoremenu PopUp.Hover                       :lua vim.lsp.buf.hover()<CR>
     anoremenu PopUp.Defintion                   :lua vim.lsp.buf.definition()<CR>
-    anoremenu PopUp.Type\ Defintion              :lua vim.lsp.buf.type_definition()<CR>
+    anoremenu PopUp.Type\ Defintion             :lua vim.lsp.buf.type_definition()<CR>
     anoremenu PopUp.References                  :lua vim.lsp.buf.references()<CR>
 ]])
 
