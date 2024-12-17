@@ -1,8 +1,8 @@
 return {
     {
-        'catppuccin/nvim',
+        'folke/tokyonight.nvim',
         config = function()
-            vim.cmd.colorscheme('catppuccin')
+            vim.cmd.colorscheme('tokyonight')
         end,
     },
     {
