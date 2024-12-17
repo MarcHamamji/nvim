@@ -23,7 +23,7 @@ return {
 
         local builtins = require('telescope.builtin')
 
-        utils.map('n', '<leader>r', vim.lsp.buf.rename, { desc = '[R]ename' })
+        utils.map('n', '<leader>rn', vim.lsp.buf.rename, { desc = '[R]ename' })
         utils.map('n', '<leader>a', vim.lsp.buf.code_action, { desc = 'Code [a]ction' })
         utils.map('v', '<leader>a', vim.lsp.buf.code_action, { desc = 'Code [a]ction' })
         utils.map('n', '<leader>dd', vim.diagnostic.open_float, { desc = 'Open floating [d]iagnostics' })
