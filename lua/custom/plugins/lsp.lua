@@ -11,13 +11,13 @@ return {
         },
         {
             "j-hui/fidget.nvim",
-            opts = {},
+            config = true,
         },
     },
     config = function()
         vim.api.nvim_create_autocmd('LspAttach', {
-            callback = function()
-                utils.map('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format buffer (LSP)' })
+            callback = function(args)
+                utils.map('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format buffer (LSP)', buffer = args.buf })
             end
         })
 
