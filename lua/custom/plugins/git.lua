@@ -8,6 +8,7 @@ return {
             "sindrets/diffview.nvim",
             "nvim-telescope/telescope.nvim",
         },
+        keys = { { '<leader>n' } },
         config = function()
             local neogit = require('neogit')
 

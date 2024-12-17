@@ -2,6 +2,7 @@ local utils = require('custom.utils')
 
 return {
     'MarcHamamji/runner.nvim',
+    keys = { { '<leader><Space>' } },
     config = function()
         local runner = require('runner')
         local helpers = require('runner.handlers.helpers')
@@ -23,6 +24,6 @@ return {
             helpers.choice(handlers)(buffer)
         end)
 
-        utils.map('n', '<leader><space>', runner.run, { desc = 'Runner' })
+        utils.map('n', '<leader><Space>', runner.run, { desc = 'Runner' })
     end,
 }
