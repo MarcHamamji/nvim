@@ -3,7 +3,7 @@ return {
     dependencies = {
         {
             'zbirenbaum/copilot.lua',
-            init = function()
+            config = function()
                 require('copilot').setup {
                     suggestion = { enabled = false },
                     panel = { enabled = false },
@@ -12,7 +12,7 @@ return {
         },
 
     },
-    init = function()
+    config = function()
         require('copilot_cmp').setup()
     end,
 

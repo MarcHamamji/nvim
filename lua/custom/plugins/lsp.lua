@@ -14,7 +14,7 @@ return {
             opts = {},
         },
     },
-    init = function()
+    config = function()
         vim.api.nvim_create_autocmd('LspAttach', {
             callback = function()
                 utils.map('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format buffer (LSP)' })

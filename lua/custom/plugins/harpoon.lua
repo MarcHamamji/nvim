@@ -5,7 +5,7 @@ return {
     dependencies = {
         'nvim-lua/plenary.nvim',
     },
-    init = function()
+    config = function()
         local ui = require('harpoon.ui')
         local mark = require('harpoon.mark')
 

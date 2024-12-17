@@ -3,7 +3,7 @@ local utils = require('custom.utils')
 return {
     'stevearc/oil.nvim',
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    init = function()
+    config = function()
         local oil = require('oil')
 
         oil.setup {

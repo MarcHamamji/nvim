@@ -1,7 +1,7 @@
 return {
     {
         'catppuccin/nvim',
-        init = function()
+        config = function()
             vim.cmd.colorscheme('catppuccin')
         end,
     },
@@ -10,7 +10,7 @@ return {
         dependencies = {
             'kyazdani42/nvim-web-devicons',
         },
-        init = function()
+        config = function()
             local separators = {
                 -- section = {
                 --   left = '',

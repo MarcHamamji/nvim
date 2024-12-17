@@ -3,7 +3,7 @@ return {
     dependencies = {
         'rafamadriz/friendly-snippets'
     },
-    init = function()
+    config = function()
         local ls = require('luasnip')
 
         ls.config.set_config {

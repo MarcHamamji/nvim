@@ -6,7 +6,7 @@ return {
         'nvim-lua/plenary.nvim',
         'kyazdani42/nvim-web-devicons',
     },
-    init = function()
+    config = function()
         local builtins = require('telescope.builtin')
         local themes = require('telescope.themes')
 

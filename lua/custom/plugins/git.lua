@@ -8,7 +8,7 @@ return {
             "sindrets/diffview.nvim",
             "nvim-telescope/telescope.nvim",
         },
-        init = function()
+        config = function()
             local neogit = require('neogit')
 
             neogit.setup {}
@@ -18,7 +18,7 @@ return {
     },
     {
         'lewis6991/gitsigns.nvim',
-        init = function()
+        config = function()
             require('gitsigns').setup {
                 signcolumn = true,
                 current_line_blame = true,
