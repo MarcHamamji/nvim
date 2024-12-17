@@ -63,7 +63,6 @@ return {
                     name = "copilot",
                     max_item_count = 1,
                 },
-                { name = 'git' },
                 { name = 'nvim_lsp' },
                 {
                     name = 'luasnip',
