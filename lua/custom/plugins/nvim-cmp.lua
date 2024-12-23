@@ -42,7 +42,8 @@ return {
             },
             mapping = cmp.mapping.preset.insert {
                 ['<C-Space>'] = cmp.mapping.complete {},
-                ['<CR>'] = cmp.mapping.confirm { select = false },
+                -- ['<CR>'] = cmp.mapping.confirm { select = false },
+                ["<C-y>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
                 ['<C-J>'] = cmp.mapping(function(fallback)
                     if luasnip.jumpable() then
                         luasnip.jump(1)
