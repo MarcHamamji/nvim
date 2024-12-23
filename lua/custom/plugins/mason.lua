@@ -10,7 +10,11 @@ return {
 
         local lspconfig = require('lspconfig')
 
-        mason.setup()
+        mason.setup {
+            ui = {
+                border = "rounded",
+            }
+        }
         mason_lsp.setup()
 
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
