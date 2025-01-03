@@ -27,6 +27,7 @@ return {
         utils.map('n', '<leader>sg', builtins.live_grep, { desc = '[S]earch [g]rep' })
         utils.map('n', '<leader>sk', builtins.keymaps, { desc = '[S]earch [k]eymaps' })
         utils.map('n', '<leader>sh', builtins.help_tags, { desc = '[S]earch [h]elp tags' })
+        utils.map('n', '<leader>sm', builtins.man_pages, { desc = '[S]earch [m]an pages' })
         utils.map('n', '<leader>st', builtins.builtin, { desc = '[S]earch [t]elescope builtins' })
         utils.map('n', '<leader>so', builtins.oldfiles, { desc = '[S]earch [o]ld files' })
         utils.map('n', '<leader>ss', builtins.lsp_document_symbols, { desc = '[S]earch document [s]ymbols' })
