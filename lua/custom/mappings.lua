@@ -12,3 +12,5 @@ utils.map('n', '<C-u>', '<C-u>zz')
 utils.map('n', '<C-d>', '<C-d>zz')
 utils.map('n', 'n', 'nzzzv')
 utils.map('n', 'N', 'Nzzzv')
+
+utils.map("n", "<Esc>", "<cmd>nohlsearch<CR>")
