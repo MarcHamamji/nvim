@@ -31,6 +31,8 @@ vim.cmd([[
     anoremenu PopUp.Defintion                   :lua vim.lsp.buf.definition()<CR>
     anoremenu PopUp.Type\ Defintion             :lua vim.lsp.buf.type_definition()<CR>
     anoremenu PopUp.References                  :lua vim.lsp.buf.references()<CR>
+    anoremenu PopUp.-3-                         <Nop>
+    anoremenu PopUp.Quit                        :q<CR>
 ]])
 
 
