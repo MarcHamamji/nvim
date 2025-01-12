@@ -14,6 +14,9 @@ return {
                 padding = 10,
                 border = "rounded",
             },
+            view_options = {
+                show_hidden = true,
+            }
         }
 
         utils.map('n', '<leader>o', oil.toggle_float, { desc = '[O]il toggle float' })
