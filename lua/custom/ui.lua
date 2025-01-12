@@ -45,3 +45,8 @@ vim.api.nvim_set_hl(0, 'SpellLocal', {})
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = "rounded",
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "help", "man" },
+    command = "wincmd L",
+})
