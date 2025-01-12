@@ -32,5 +32,6 @@ return {
         utils.map('n', '<leader>so', builtins.oldfiles, { desc = '[S]earch [o]ld files' })
         utils.map('n', '<leader>ss', builtins.lsp_document_symbols, { desc = '[S]earch document [s]ymbols' })
         utils.map('n', '<leader>sw', builtins.lsp_dynamic_workspace_symbols, { desc = '[S]earch [w]orkspace symbols' })
+        utils.map('n', '<leader>sr', builtins.resume, { desc = '[S]earch [r]resume' })
     end,
 }
