@@ -14,7 +14,9 @@ return {
 
             neogit.setup {}
 
-            utils.map('n', '<leader>n', neogit.open, { desc = 'Open [N]eogit' })
+            utils.map('n', '<leader>n', function()
+                neogit.open({ kind = "vsplit" })
+            end, { desc = 'Open [N]eogit' })
         end,
     },
     {
