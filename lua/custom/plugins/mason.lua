@@ -1,3 +1,13 @@
+local settings = {
+    rust_analyzer = {
+        ["rust-analyzer"] = {
+            checkOnSave = {
+                command = "clippy",
+            },
+        },
+    }
+}
+
 return {
     'williamboman/mason.nvim',
     dependencies = {
@@ -22,6 +32,7 @@ return {
             function(server_name)
                 lspconfig[server_name].setup {
                     capabilities = capabilities,
+                    settings = settings[server_name],
                 }
             end
         }
