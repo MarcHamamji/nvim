@@ -8,6 +8,7 @@ vim.opt.inccommand = 'split'
 vim.opt.termguicolors = true
 
 vim.opt.splitright = true
+vim.o.winborder = 'rounded'
 
 vim.opt.gdefault = true
 vim.opt.showmode = false
