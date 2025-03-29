@@ -29,3 +29,12 @@ vim.opt.spell = false
 vim.opt.spelllang = { 'en_us' }
 
 vim.g.BASH_Ctrl_j = false
+
+vim.api.nvim_create_autocmd('TermOpen', {
+    group = vim.api.nvim_create_augroup('custom-terminal-opts', { clear = true }),
+    callback = function()
+        vim.opt_local.nu = false
+        vim.opt_local.rnu = false
+        vim.opt.signcolumn = 'no'
+    end
+})
