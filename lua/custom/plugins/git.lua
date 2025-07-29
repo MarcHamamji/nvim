@@ -30,6 +30,10 @@ return {
             utils.map('n', 'gh', function()
                 require('gitsigns').preview_hunk()
             end, { desc = '[G]it [h]unk' })
+
+            utils.map('n', 'gb', function()
+                require('gitsigns').blame_line()
+            end, { desc = '[G]it [b]lame' })
         end,
 
     },
