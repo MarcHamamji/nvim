@@ -29,9 +29,7 @@ return {
         utils.map('n', '<leader>dd', vim.diagnostic.open_float, { desc = 'Open floating [d]iagnostics' })
         utils.map('n', '<leader>sd', builtins.diagnostics, { desc = '[S]earch [d]iagnostics' })
 
-        utils.map('n', 'gd', vim.lsp.buf.definition, { desc = '[G]o to [d]efinition' })
-        utils.map('n', 'gi', vim.lsp.buf.implementation, { desc = '[G]o to [i]mplementation' })
-        utils.map('n', 'gr', builtins.lsp_references, { desc = '[G]o to [r]eferences' })
+        utils.map('n', 'gd', 'gD', { desc = '[G]o to global [d]eclaration' })
         utils.map('n', '<leader>dj', function() vim.diagnostic.goto_next({ float = { border = 'rounded' } }) end,
             { desc = 'Go to next diagnostic' })
         utils.map('n', '<leader>dk', function() vim.diagnostic.goto_prev({ float = { border = 'rounded' } }) end,
