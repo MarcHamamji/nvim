@@ -3,6 +3,10 @@ return {
         'folke/tokyonight.nvim',
         config = function()
             vim.cmd.colorscheme('tokyonight')
+            vim.api.nvim_set_hl(0, '@comment.error', { reverse = true, fg = '#c64343' })
+            vim.api.nvim_set_hl(0, '@comment.warning', { reverse = true, fg = '#8c6c3e' })
+            vim.api.nvim_set_hl(0, '@comment.note', { reverse = true, fg = '#2e7de9'  })
+            vim.api.nvim_set_hl(0, '@comment.todo', { reverse = true, fg = '#118c74' })
         end,
     },
     {
