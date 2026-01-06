@@ -7,7 +7,9 @@ vim.lsp.enable {
     "clangd",
     "clojure_lsp",
     "pyright",
-    "ansiblels"
+    "ansiblels",
+    "autotools_ls",
+    "ts_ls"
 }
 
 vim.lsp.config("ansiblels", {
