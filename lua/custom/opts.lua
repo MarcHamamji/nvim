@@ -19,17 +19,21 @@ vim.opt.nu = true
 vim.opt.rnu = true
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 vim.opt.wrap = false
 vim.opt.breakindent = true
+vim.opt.linebreak = true
 
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.undofile = true
 
-vim.opt.completeopt = { "menuone", "noselect", "noinsert", "fuzzy" }
+vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert", "fuzzy", "popup" }
 
 vim.opt.spell = false
 vim.opt.spelllang = { "en_us" }
+
+vim.opt.mousescroll = "ver:1,hor:2"
 
 vim.g.BASH_Ctrl_j = false
 
