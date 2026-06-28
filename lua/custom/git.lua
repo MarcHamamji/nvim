@@ -34,8 +34,8 @@ end, { desc = '[G]it [b]lame' })
 
 vim.keymap.set('n', 'gj', function()
     gitsigns.next_hunk()
-end, { desc = '[G]it [h]unk' })
+end, { desc = '[G]it next hunk' })
 
 vim.keymap.set('n', 'gk', function()
     gitsigns.prev_hunk()
-end, { desc = '[G]it [h]unk' })
+end, { desc = '[G]it previous hunk' })
